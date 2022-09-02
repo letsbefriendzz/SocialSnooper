@@ -1,0 +1,27 @@
+{
+  "name": "SocialSnooper",
+  "description": "Snoop on social media, with confidence.",
+  "version": "0.1",
+  "manifest_version": 3,
+  "declarative_net_request" : {
+    "rule_resources" : [
+      {
+        "id": "instagram_ruleset",
+        "enabled": true,
+        "path": "request_rulesets/instagram_ruleset.json"
+      },
+      {
+        "id": "facebook_ruleset",
+        "enabled": true,
+        "path": "request_rulesets/facebook_ruleset.json"
+      }
+    ]
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
