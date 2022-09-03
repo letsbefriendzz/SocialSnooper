@@ -4,7 +4,7 @@
     "priority": 1,
     "action" : { "type" : "block" },
     "condition" : {
-      "urlFilter" : "web/likes",
+      "urlFilter" : "web/comments/like",
       "domains" : ["instagram.com"],
       "resourceTypes" : ["xmlhttprequest"]
     }

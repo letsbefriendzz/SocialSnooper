@@ -6,21 +6,22 @@
   "background": {
     "service_worker": "background.js"
   },
-  "declarative_net_request" : {
-    "rule_resources" : [
+  "declarative_net_request": {
+    "rule_resources": [
       {
-        "id": "instagram_ruleset",
+        "id": "instagram_post_ruleset",
         "enabled": true,
-        "path": "request_rulesets/instagram_ruleset.json"
+        "path": "request_rulesets/instagram_post_ruleset.json"
       },
       {
-        "id": "facebook_ruleset",
+        "id": "instagram_comment_ruleset",
         "enabled": true,
-        "path": "request_rulesets/facebook_ruleset.json"
+        "path": "request_rulesets/instagram_comment_ruleset.json"
       }
     ]
   },
   "permissions": [
+    "storage",
     "declarativeNetRequest",
     "declarativeNetRequestFeedback"
   ],
