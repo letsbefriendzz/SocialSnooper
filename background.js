@@ -1,6 +1,7 @@
 const RULESET_LIST = [
-    'instagram_post_ruleset',
-    'instagram_comment_ruleset',
+    "instagram_post_ruleset",
+    "instagram_comment_ruleset",
+    "instagram_follow_ruleset"
 ]
 console.log('SocialSnooper Loaded!');
 
