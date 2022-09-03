@@ -1,0 +1,12 @@
+[
+  {
+    "id" : 3,
+    "priority": 1,
+    "action" : { "type" : "block" },
+    "condition" : {
+      "urlFilter" : "follow",
+      "domains" : ["instagram.com"],
+      "resourceTypes" : ["xmlhttprequest"]
+    }
+  }
+]

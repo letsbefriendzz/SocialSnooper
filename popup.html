@@ -7,24 +7,11 @@
     <body>
         <div id="content">
             <h1 id="main-header">Social Snooper</h1>
-            <div id="inputs">
-                <label class="switch">
-                    <input type="checkbox" id="postLikeToggle-ig">
-                    <span class="slider round"></span>
-                </label>
-                <br>
-                <br>
-                <label class="switch">
-                    <input type="checkbox" id="commentLikeToggle-ig">
-                    <span class="slider round"></span>
-                </label>
-                <br>
-                <br>
-                <label class="switch">
-                    <input type="checkbox" id="followToggle-ig">
-                    <span class="slider round"></span>
-                </label>
-            </div>
+            <label class="switch">
+                <input type="checkbox" id="toggle">
+                <span class="slider round"></span>
+            </label>
+            <p id="enabledRulesets"></p>
         </div>
     </body>
 </html>
@@ -33,7 +20,7 @@
     body {
         background-color: rgb(38, 47, 64);
         width: 200px;
-        height: 200px;
+        height: 150px;
     }
 
     h1, p {
@@ -44,10 +31,6 @@
         text-align: center;
         padding-left: 15px;
         padding-right: 15px;
-    }
-
-    #inputs {
-        padding: 10px;
     }
 
     .switch {
@@ -107,4 +90,6 @@
     .slider.round:before {
         border-radius: 50%;
     }
+
+    /* #endregion roundedSwitch */
 </style>

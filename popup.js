@@ -1,4 +1,3 @@
-
 updateButtonLabel();
 function updateButtonLabel() {
     const toggle = document.getElementById("toggle");
