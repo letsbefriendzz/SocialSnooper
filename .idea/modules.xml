@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/InstaStalk.iml" filepath="$PROJECT_DIR$/.idea/InstaStalk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/SocialSnooper.iml" filepath="$PROJECT_DIR$/.idea/SocialSnooper.iml" />
     </modules>
   </component>
 </project>

@@ -1,5 +1,9 @@
-updateButtonLabel();
-function updateButtonLabel() {
+// inlining the onclick listener isn't allowed in chrome extensions, for whatever reason!
+toggleButton = document.getElementById("toggle").addEventListener("click", chromeExtTesting);
+
+// init the button by calling this func once each time the window is opened
+updateTogglePosition();
+function updateTogglePosition() {
     const toggle = document.getElementById("toggle");
     console.log('toggle');
     chrome.declarativeNetRequest.getEnabledRulesets((enabledRulesets) => {
@@ -11,7 +15,3 @@ function updateButtonLabel() {
 function chromeExtTesting() {
     chrome.runtime.sendMessage({action: "toggleRulesets"});
 }
-
-// inlining the onclick listener isn't allowed in chrome extensions, for whatever reason!
-const toggleButton = document.getElementById("toggle");
-toggleButton.addEventListener("click", chromeExtTesting);
