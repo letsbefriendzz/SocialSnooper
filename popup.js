@@ -5,9 +5,7 @@ toggleButton = document.getElementById("toggle").addEventListener("click", chrom
 updateTogglePosition();
 function updateTogglePosition() {
     const toggle = document.getElementById("toggle");
-    console.log('toggle');
     chrome.declarativeNetRequest.getEnabledRulesets((enabledRulesets) => {
-        console.log('enabled rulesets:\n\n', enabledRulesets);
         toggle.checked = enabledRulesets.length !== 0;
     })
 }
