@@ -5,7 +5,7 @@ const RULESETS = {
 };
 console.log('SocialSnooper Loaded!');
 
-chrome.runtime.onMessage.addListener((msg, sender, response) => {
+chrome.runtime.onMessage.addListener((msg) => {
     if (msg.action === "togglePostLikes")
         togglePostLikes();
     if (msg.action === "toggleCommentLikes")
@@ -22,36 +22,30 @@ function logEnbaledRulesets() {
 
 async function togglePostLikes() {
     await chrome.declarativeNetRequest.getEnabledRulesets().then((ruleSets) => {
-        if (ruleSets.includes(RULESETS.instagram_posts_ruleset)) {
+        if (ruleSets.includes(RULESETS.instagram_posts_ruleset))
             return chrome.declarativeNetRequest.updateEnabledRulesets({disableRulesetIds: [RULESETS.instagram_posts_ruleset]});
-        } else {
+        else
             return chrome.declarativeNetRequest.updateEnabledRulesets({enableRulesetIds: [RULESETS.instagram_posts_ruleset]});
-        }
     });
-
     logEnbaledRulesets();
 }
 
 async function toggleCommentLikes() {
     await chrome.declarativeNetRequest.getEnabledRulesets().then((ruleSets) => {
-        if (ruleSets.includes(RULESETS.instagram_comments_ruleset)) {
+        if (ruleSets.includes(RULESETS.instagram_comments_ruleset))
             return chrome.declarativeNetRequest.updateEnabledRulesets({disableRulesetIds: [RULESETS.instagram_comments_ruleset]});
-        } else {
+        else
             return chrome.declarativeNetRequest.updateEnabledRulesets({enableRulesetIds: [RULESETS.instagram_comments_ruleset]});
-        }
     });
-
     logEnbaledRulesets();
 }
 
 async function toggleFollows() {
     await chrome.declarativeNetRequest.getEnabledRulesets().then((ruleSets) => {
-        if (ruleSets.includes(RULESETS.instagram_follows_ruleset)) {
+        if (ruleSets.includes(RULESETS.instagram_follows_ruleset))
             return chrome.declarativeNetRequest.updateEnabledRulesets({disableRulesetIds: [RULESETS.instagram_follows_ruleset]});
-        } else {
+        else
             return chrome.declarativeNetRequest.updateEnabledRulesets({enableRulesetIds: [RULESETS.instagram_follows_ruleset]});
-        }
     });
-
     logEnbaledRulesets();
 }
