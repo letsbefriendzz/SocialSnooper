@@ -5,10 +5,23 @@
         <title>Social Snooper</title>
     </head>
     <body>
-        <div id="content">
-            <h1 id="main-header"><i>Social Snooper</i></h1>
+        <h1 id="main-header"><i>Social Snooper</i></h1>
+        <div id="content" class="toggles-container">
+            <label class="toggle-label">Post Likes</label>
             <label class="switch">
-                <input type="checkbox" id="toggle">
+                <input type="checkbox" id="post-likes">
+                <span class="slider round"></span>
+            </label>
+            <label class="toggle-label">Post Comments</label>
+            <label class="switch">
+
+                <input type="checkbox" id="post-comments">
+                <span class="slider round"></span>
+            </label>
+            <label class="toggle-label">Follows</label>
+            <label class="switch">
+
+                <input type="checkbox" id="follows">
                 <span class="slider round"></span>
             </label>
             <p id="enabledRulesets"></p>
@@ -27,12 +40,24 @@
         height: auto;
     }
 
-    h1, p {
+    #main-header {
+        text-align: center;
+    }
+
+    .toggle-label, h1, p {
         color: azure;
     }
 
-    #content {
-        text-align: center;
+    .toggle-label{
+        margin-bottom:8px;
+        margin-top:12px;
+    }
+
+    .toggles-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .switch {

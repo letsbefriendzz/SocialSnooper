@@ -9,17 +9,17 @@
   "declarative_net_request": {
     "rule_resources": [
       {
-        "id": "instagram_post_ruleset",
+        "id": "instagram_posts_ruleset",
         "enabled": true,
         "path": "request_rulesets/instagram_post_ruleset.json"
       },
       {
-        "id": "instagram_comment_ruleset",
+        "id": "instagram_comments_ruleset",
         "enabled": true,
         "path": "request_rulesets/instagram_comment_ruleset.json"
       },
       {
-        "id": "instagram_follow_ruleset",
+        "id": "instagram_follows_ruleset",
         "enabled": true,
         "path": "request_rulesets/instagram_follow_ruleset.json"
       }
