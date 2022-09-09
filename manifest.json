@@ -11,17 +11,17 @@
       {
         "id": "instagram_posts_ruleset",
         "enabled": true,
-        "path": "request_rulesets/instagram_post_ruleset.json"
+        "path": "request_rulesets/instagram_posts_ruleset.json"
       },
       {
         "id": "instagram_comments_ruleset",
         "enabled": true,
-        "path": "request_rulesets/instagram_comment_ruleset.json"
+        "path": "request_rulesets/instagram_comments_ruleset.json"
       },
       {
         "id": "instagram_follows_ruleset",
         "enabled": true,
-        "path": "request_rulesets/instagram_follow_ruleset.json"
+        "path": "request_rulesets/instagram_follows_ruleset.json"
       }
     ]
   },
