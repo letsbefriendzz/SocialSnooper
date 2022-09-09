@@ -6,10 +6,8 @@ const RULESETS = {
 console.log('SocialSnooper Loaded!');
 
 chrome.runtime.onMessage.addListener((msg, sender, response) => {
-    if (msg.action === "togglePostLikes") {
-        console.log('togglePostLikes');
+    if (msg.action === "togglePostLikes")
         togglePostLikes();
-    }
     if (msg.action === "toggleCommentLikes")
         toggleCommentLikes();
     if (msg.action === "toggleFollows")
@@ -17,12 +15,12 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
 });
 
 function logEnbaledRulesets() {
-    chrome.declarativeNetRequest.getEnabledRulesets().then((ruleSet) =>{
+    chrome.declarativeNetRequest.getEnabledRulesets().then((ruleSet) => {
         console.log(ruleSet);
     })
 }
 
-async function togglePostLikes(){
+async function togglePostLikes() {
     await chrome.declarativeNetRequest.getEnabledRulesets().then((ruleSets) => {
         if (ruleSets.includes(RULESETS.instagram_posts_ruleset)) {
             return chrome.declarativeNetRequest.updateEnabledRulesets({disableRulesetIds: [RULESETS.instagram_posts_ruleset]});
@@ -36,7 +34,6 @@ async function togglePostLikes(){
 
 async function toggleCommentLikes() {
     await chrome.declarativeNetRequest.getEnabledRulesets().then((ruleSets) => {
-        console.log(ruleSets)
         if (ruleSets.includes(RULESETS.instagram_comments_ruleset)) {
             return chrome.declarativeNetRequest.updateEnabledRulesets({disableRulesetIds: [RULESETS.instagram_comments_ruleset]});
         } else {
@@ -49,7 +46,6 @@ async function toggleCommentLikes() {
 
 async function toggleFollows() {
     await chrome.declarativeNetRequest.getEnabledRulesets().then((ruleSets) => {
-        console.log(ruleSets)
         if (ruleSets.includes(RULESETS.instagram_follows_ruleset)) {
             return chrome.declarativeNetRequest.updateEnabledRulesets({disableRulesetIds: [RULESETS.instagram_follows_ruleset]});
         } else {

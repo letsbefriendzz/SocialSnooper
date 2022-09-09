@@ -7,12 +7,10 @@ document.getElementById("follows").addEventListener("click", sendFollowToggleMes
 init();
 
 function init() {
-    updateTogglePosition('follows','instagram_follows_ruleset');
-    updateTogglePosition('post-likes','instagram_posts_ruleset');
-    updateTogglePosition('post-comments','instagram_comments_ruleset');
+    updateTogglePosition('follows', 'instagram_follows_ruleset');
+    updateTogglePosition('post-likes', 'instagram_posts_ruleset');
+    updateTogglePosition('post-comments', 'instagram_comments_ruleset');
 }
-
-
 
 function updateTogglePosition(elementId, ruleSetId) {
     const toggle = document.getElementById(elementId);
