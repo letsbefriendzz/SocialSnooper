@@ -2,7 +2,7 @@ const RULESETS = {
     instagram_posts_ruleset: "instagram_posts_ruleset",
     instagram_comments_ruleset: "instagram_comments_ruleset",
     instagram_follows_ruleset: "instagram_follows_ruleset",
-}
+};
 console.log('SocialSnooper Loaded!');
 
 chrome.runtime.onMessage.addListener((msg, sender, response) => {
@@ -17,7 +17,7 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
 function logEnbaledRulesets() {
     chrome.declarativeNetRequest.getEnabledRulesets().then((ruleSets) => {
         console.log(ruleSets);
-    })
+    });
 }
 
 async function togglePostLikes() {
