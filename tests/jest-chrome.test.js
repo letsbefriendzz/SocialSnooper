@@ -1,5 +1,4 @@
 import {chrome} from 'jest-chrome';
-const puppeteer = require('puppeteer');
 
 describe('default jest-chrome tests', () => {
     it('can use listeners', () => {
