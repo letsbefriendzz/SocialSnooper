@@ -14,7 +14,7 @@ chrome.runtime.onMessage.addListener((msg) => {
         toggleFollows();
 });
 
-function logEnbaledRulesets() {
+function logEnabledRules() {
     chrome.declarativeNetRequest.getEnabledRulesets().then((ruleSets) => {
         console.log(ruleSets);
     });
@@ -27,7 +27,7 @@ async function togglePostLikes() {
         else
             return chrome.declarativeNetRequest.updateEnabledRulesets({enableRulesetIds: [RULESETS.instagram_posts_ruleset]});
     });
-    logEnbaledRulesets();
+    logEnabledRules();
 }
 
 async function toggleCommentLikes() {
@@ -37,7 +37,7 @@ async function toggleCommentLikes() {
         else
             return chrome.declarativeNetRequest.updateEnabledRulesets({enableRulesetIds: [RULESETS.instagram_comments_ruleset]});
     });
-    logEnbaledRulesets();
+    logEnabledRules();
 }
 
 async function toggleFollows() {
@@ -47,5 +47,5 @@ async function toggleFollows() {
         else
             return chrome.declarativeNetRequest.updateEnabledRulesets({enableRulesetIds: [RULESETS.instagram_follows_ruleset]});
     });
-    logEnbaledRulesets();
+    logEnabledRules();
 }
