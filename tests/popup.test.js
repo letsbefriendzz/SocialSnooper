@@ -1,4 +1,4 @@
-import * as DOM from './_setup';
+import {getDOMInstance} from "./_setup";
 
 describe('popup', () => {
     const provideToggleData = [
@@ -16,15 +16,31 @@ describe('popup', () => {
         },
     ];
 
+    const provideTogglePositions = [
+        {},
+        {},
+        {},
+    ];
+
     it.each(provideToggleData)('calls sendMessage on toggle click', (toggleData) => {
-        const postLikesToggle = DOM.document.getElementById(toggleData.toggleId);
+        const document = getDOMInstance().window.document;
+
+        const rulesetToggle = document.getElementById(toggleData.toggleId);
         const toggleOnclickCallback = jest.fn(() => {
             chrome.runtime.sendMessage({action: toggleData.toggleAction});
         });
-        postLikesToggle.addEventListener("click", toggleOnclickCallback);
+        rulesetToggle.addEventListener("click", toggleOnclickCallback);
 
-        postLikesToggle.click();
+        rulesetToggle.click();
 
         expect(chrome.runtime.sendMessage).toBeCalledWith({action: "togglePostLikes"});
+    });
+
+    it('sets the toggles to the correct position', async () => {
+        // await chrome.declarativeNetRequest.updateEnabledRulesets({disableRulesetIds})
+        const document = getDOMInstance().window.document;
+        const postLikesToggle = document.getElementById('post-likes');
+        console.log(postLikesToggle.checked);
+        expect(postLikesToggle.checked).toBeTruthy();
     });
 });
