@@ -20,7 +20,6 @@ function updateTogglePosition(elementId, ruleSetId) {
 }
 
 function sendPostLikesToggleMessage() {
-    console.log('jsdom test');
     chrome.runtime.sendMessage({action: "togglePostLikes"});
 }
 
