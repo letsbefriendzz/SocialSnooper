@@ -3,7 +3,6 @@ document.getElementById("instagram-post-likes").addEventListener("click", sendPo
 document.getElementById("instagram-post-comments").addEventListener("click", sendPostCommentsToggleMessage);
 document.getElementById("instagram-follows").addEventListener("click", sendFollowToggleMessage);
 
-// init the button by calling this func once each time the window is opened
 init();
 
 function init() {
