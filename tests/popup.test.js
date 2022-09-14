@@ -3,15 +3,15 @@ import {getDOMInstance} from "./_setup";
 describe('popup', () => {
     const provideToggleData = [
         {
-            toggleId: 'post-likes',
+            toggleId: 'instagram-post-likes',
             toggleAction: 'togglePostLikes',
         },
         {
-            toggleId: 'post-comments',
+            toggleId: 'instagram-post-comments',
             toggleAction: 'toggleCommentLikes',
         },
         {
-            toggleId: 'follows',
+            toggleId: 'instagram-follows',
             toggleAction: 'toggleFollows',
         },
     ];
@@ -31,6 +31,6 @@ describe('popup', () => {
     });
 
     it('sets the toggles to the correct position', async () => {
-        // there is really no good way to test this rofl
+
     });
 });
