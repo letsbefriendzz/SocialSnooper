@@ -1,12 +1,18 @@
 [
   {
-    "id" : 2,
+    "id": 2,
     "priority": 1,
-    "action" : { "type" : "block" },
-    "condition" : {
-      "urlFilter" : "web/likes",
-      "domains" : ["instagram.com"],
-      "resourceTypes" : ["xmlhttprequest"]
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "web/likes",
+      "domains": [
+        "instagram.com"
+      ],
+      "resourceTypes": [
+        "xmlhttprequest"
+      ]
     }
   }
 ]
