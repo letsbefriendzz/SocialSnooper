@@ -1,14 +1,15 @@
 [
   {
-    "id": 3,
+    "feedback_reaction_id": "1635855486666999",
+    "id": 4,
     "priority": 1,
     "action": {
       "type": "block"
     },
     "condition": {
-      "urlFilter": "follow",
+      "urlFilter": "api/graphql",
       "domains": [
-        "instagram.com"
+        "facebook.com"
       ],
       "resourceTypes": [
         "xmlhttprequest"

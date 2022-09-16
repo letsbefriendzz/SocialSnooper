@@ -7,11 +7,11 @@ console.log('SocialSnooper Loaded!');
 
 chrome.runtime.onMessage.addListener((msg) => {
     if (msg.action === "togglePostLikes")
-        togglePostLikes();
+        return togglePostLikes();
     if (msg.action === "toggleCommentLikes")
-        toggleCommentLikes();
+        return toggleCommentLikes();
     if (msg.action === "toggleFollows")
-        toggleFollows();
+        return toggleFollows();
 });
 
 function logEnabledRules() {
