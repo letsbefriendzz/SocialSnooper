@@ -2,6 +2,7 @@ const RULESETS = {
     instagram_posts_ruleset: "instagram_posts_ruleset",
     instagram_comments_ruleset: "instagram_comments_ruleset",
     instagram_follows_ruleset: "instagram_follows_ruleset",
+    instagram_read_receipts_ruleset: "instagram_read_receipt",
 };
 console.log('SocialSnooper Loaded!');
 
@@ -12,6 +13,8 @@ chrome.runtime.onMessage.addListener((msg) => {
         return toggleCommentLikes();
     if (msg.action === "toggleFollows")
         return toggleFollows();
+    if (msg.action === "toggleDMReadReceipts")
+        return toggleDMReadReceipts();
 });
 
 function logEnabledRules() {
@@ -43,9 +46,22 @@ async function toggleCommentLikes() {
 async function toggleFollows() {
     await chrome.declarativeNetRequest.getEnabledRulesets().then((ruleSets) => {
         if (ruleSets.includes(RULESETS.instagram_follows_ruleset))
-            return chrome.declarativeNetRequest.updateEnabledRulesets({disableRulesetIds: [RULESETS.instagram_follows_ruleset]});
+            return chrome.declarativeNetRequest
+                .updateEnabledRulesets({disableRulesetIds: [RULESETS.instagram_follows_ruleset]});
         else
-            return chrome.declarativeNetRequest.updateEnabledRulesets({enableRulesetIds: [RULESETS.instagram_follows_ruleset]});
+            return chrome.declarativeNetRequest
+                .updateEnabledRulesets({enableRulesetIds: [RULESETS.instagram_follows_ruleset]});
+    });
+    logEnabledRules();
+}
+async function toggleDMReadReceipts() {
+    await chrome.declarativeNetRequest.getEnabledRulesets().then((ruleSets) => {
+        if (ruleSets.includes(RULESETS.instagram_read_receipts_ruleset))
+            return chrome.declarativeNetRequest
+                .updateEnabledRulesets({disableRulesetIds: [RULESETS.instagram_read_receipts_ruleset]});
+        else
+            return chrome.declarativeNetRequest
+                .updateEnabledRulesets({enableRulesetIds: [RULESETS.instagram_read_receipts_ruleset]});
     });
     logEnabledRules();
 }

@@ -22,6 +22,11 @@
         "id": "instagram_follows_ruleset",
         "enabled": true,
         "path": "request_rulesets/instagram_follows_ruleset.json"
+      },
+      {
+        "id": "instagram_dm_read_ruleset",
+        "enabled": true,
+        "path": "request_rulesets/instagram_dm_read_ruleset.json"
       }
     ]
   },
