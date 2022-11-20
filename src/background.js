@@ -2,7 +2,7 @@ const RULESETS = {
     instagram_posts_ruleset: "instagram_posts_ruleset",
     instagram_comments_ruleset: "instagram_comments_ruleset",
     instagram_follows_ruleset: "instagram_follows_ruleset",
-    instagram_read_receipts_ruleset: "instagram_read_receipt",
+    instagram_read_receipts_ruleset: "instagram_dm_read_ruleset",
 };
 console.log('SocialSnooper Loaded!');
 

@@ -56,4 +56,9 @@ describe('default jest-chrome tests', () => {
         );
         expect(callbackSpy).toBeCalledWith(response);
     });
+
+    it.only('can mock declarativeNetRequest API calls', () => {
+        const callback = jest.fn();
+        chrome.declarativeNetRequest.getEnabledRulesets.mockImplementation(callback);
+    });
 });
